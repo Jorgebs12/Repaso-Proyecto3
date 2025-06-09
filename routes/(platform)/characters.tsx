@@ -1,6 +1,5 @@
 import { FreshContext, Handlers, PageProps } from "$fresh/server.ts";
 import axios from "npm:axios"
-import CharacterList from "../../components/CharacterList.tsx";
 import CharacterForm from "../../islands/CharacterForm.tsx";
 
 type Character = {
