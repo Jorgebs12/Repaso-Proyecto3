@@ -5,6 +5,7 @@
 import * as $_platform_character_id_ from "./routes/(platform)/character/[id].tsx";
 import * as $_platform_characters from "./routes/(platform)/characters.tsx";
 import * as $_platform_fav_list from "./routes/(platform)/fav-list.tsx";
+import * as $_platform_house_house_ from "./routes/(platform)/house/[house].tsx";
 import * as $_platform_middleware from "./routes/(platform)/middleware.ts";
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
@@ -20,6 +21,7 @@ const manifest = {
     "./routes/(platform)/character/[id].tsx": $_platform_character_id_,
     "./routes/(platform)/characters.tsx": $_platform_characters,
     "./routes/(platform)/fav-list.tsx": $_platform_fav_list,
+    "./routes/(platform)/house/[house].tsx": $_platform_house_house_,
     "./routes/(platform)/middleware.ts": $_platform_middleware,
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
