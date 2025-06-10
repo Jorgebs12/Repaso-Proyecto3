@@ -1,4 +1,5 @@
 import { FunctionalComponent } from "preact/src/index.d.ts";
+import Fav from "../islands/Fav.tsx";
 
 type Character = {
     id: string
@@ -20,7 +21,7 @@ const CharacterList: FunctionalComponent<{characters: Character[]}> = ({characte
                         <p> {character.name} </p>
                         <p> House: {character.house} </p>
                     </a>
-
+                    <Fav id={character.name} />
                 </li>
             ))}
         </ul>

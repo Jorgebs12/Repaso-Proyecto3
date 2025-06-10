@@ -1,5 +1,6 @@
 import { FreshContext, Handlers, PageProps } from "$fresh/server.ts";
 import axios from "npm:axios";
+import CharacterId from "../../../components/CharacterId.tsx";
 
 
 type Character = {
@@ -19,7 +20,7 @@ export const handler: Handlers<{character: Character}> = {
         const {id} = ctx.params
 
         try {
-            const response = await axios.get(`https://hp-api.onrender.com/api/characters/${id}`)
+            const response = await axios.get(`https://hp-api.onrender.com/api/character/${id}`)
             const character: Character = response.data
 
             return ctx.render({ character })
@@ -38,4 +39,8 @@ const Page = (props: PageProps <{character: Character}>) => {
         </div>
     )
 }
+
+            //PARA QUITAR EL ERROR <CharacterId characters={[props.data.character]} />
+
+
 export default Page;
