@@ -43,7 +43,7 @@ const Fav: FunctionalComponent<Props> = ({id}) => {
     }
 
     return (
-        <button onClick={toogleFav}> {isFav ? "Delete" : "Add" } </button>
+        <button type="button" onClick={toogleFav}> {isFav ? "Delete" : "Add" } </button>
     )
 }
 

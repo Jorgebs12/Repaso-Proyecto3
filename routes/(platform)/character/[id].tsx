@@ -14,14 +14,14 @@ type Character = {
     alternate_names: string[];
 }
 
-export const handler: Handlers<{character: Character}> = {
+export const handler: Handlers<{character: Character[]}> = {
     async GET (_req: Request, ctx: FreshContext) {
         
         const {id} = ctx.params
 
         try {
             const response = await axios.get(`https://hp-api.onrender.com/api/character/${id}`)
-            const character: Character = response.data
+            const character: Character[] = response.data
 
             return ctx.render({ character })
 
@@ -31,7 +31,7 @@ export const handler: Handlers<{character: Character}> = {
     }
 }
 
-const Page = (props: PageProps <{character: Character}>) => {
+const Page = (props: PageProps <{character: Character[]}>) => {
     return(
         <div> 
             <h1> Busqueda de Personajes </h1>

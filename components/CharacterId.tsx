@@ -17,7 +17,7 @@ const CharacterId: FunctionalComponent<{characters: Character[]}> = ({ character
 
     return (
         <div>
-              {characters.map((character: Character) => (
+            {characters.map((character) => (
                 <div key={character.id}>
                     <h1>{character.name}</h1>
                     <img src={character.image} alt={character.name} />
@@ -25,7 +25,7 @@ const CharacterId: FunctionalComponent<{characters: Character[]}> = ({ character
                     <p>Especie: {character.species}</p>
                     <p>Patronus: {character.patronus}</p>
                     <p>Género: {character.gender}</p>
-                    <p>Nombres alternativos: {character.alternate_names.join(", ")}</p>
+                    <p>Nombres alternativos: {character.alternate_names?.length ? character.alternate_names.join(", ") : "Ninguno"} </p>
                 </div>
             ))}
         </div>
@@ -33,3 +33,17 @@ const CharacterId: FunctionalComponent<{characters: Character[]}> = ({ character
 }
 
 export default CharacterId
+
+
+/*
+<div key={characters.id}>
+                <h1>{characters.name}</h1>
+                <img src={characters.image} alt={characters.name} />
+                <p>Casa: <a href={`/house/${characters.house}`}>{characters.house}</a></p>
+                <p>Especie: {characters.species}</p>
+                <p>Patronus: {characters.patronus}</p>
+                <p>Género: {characters.gender}</p>
+                {characters.alternate_names && characters.alternate_names.length > 0 && (
+                <p> Nombres alternativos: {characters.alternate_names.join(", ")} </p> )}
+            </div>
+*/
